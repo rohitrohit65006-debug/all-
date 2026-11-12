@@ -1,0 +1,6 @@
+{
+  "name": "allbook",
+  "description": "Connect with All Book on WhatsApp. Official contact and support portal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
