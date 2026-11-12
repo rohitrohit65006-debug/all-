@@ -57,16 +57,35 @@ export default function App() {
       }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    document.body.addEventListener('mouseleave', handleMouseLeave);
-    document.body.addEventListener('mouseenter', handleMouseEnter);
+    // Track genuine SPA route changes (ignoring hash anchor clicks) without duplicate PageViews
+    let lastPath = window.location.pathname;
+    const handleRouteChange = () => {
+      if (window.location.pathname !== lastPath) {
+        lastPath = window.location.pathname;
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'PageView');
+        }
+      }
+    };
+
+    window.addEventListener('popstate', handleRouteChange);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       document.body.removeEventListener('mouseleave', handleMouseLeave);
       document.body.removeEventListener('mouseenter', handleMouseEnter);
+      window.removeEventListener('popstate', handleRouteChange);
     };
   }, []);
+
+  const handleWhatsAppClick = () => {
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Contact', {
+        content_name: 'WhatsApp Contact',
+        content_category: 'Lead',
+      });
+    }
+  };
 
   return (
     <>
@@ -167,6 +186,7 @@ export default function App() {
             rel="noopener noreferrer"
             className="open-app-btn"
             id="openAppBtn"
+            onClick={handleWhatsAppClick}
           >
             <i className="fa-brands fa-whatsapp"></i> Message on WhatsApp
           </a>
@@ -188,6 +208,7 @@ export default function App() {
         className="floating-wa-btn"
         aria-label="Message on WhatsApp"
         title="Message on WhatsApp"
+        onClick={handleWhatsAppClick}
       >
         <i className="fa-brands fa-whatsapp"></i>
       </a>
@@ -279,6 +300,7 @@ export default function App() {
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={handleWhatsAppClick}
                 >
                   <i className="fa-solid fa-envelope"></i> Contact Us
                 </a>
