@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 const WHATSAPP_NUMBER = '917282044597';
-const DEFAULT_WHATSAPP_MESSAGE = 'i want All !-D';
+const DEFAULT_WHATSAPP_MESSAGE = 'I want to create ID.';
 
 const buildWhatsAppUrl = (message: string = DEFAULT_WHATSAPP_MESSAGE): string => {
   const encodedMessage = encodeURIComponent(message);
