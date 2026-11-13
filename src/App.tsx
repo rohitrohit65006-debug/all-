@@ -1,7 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 
 const WHATSAPP_NUMBER = '917282044597';
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
+const DEFAULT_WHATSAPP_MESSAGE = 'i want All !-D';
+
+const buildWhatsAppUrl = (message: string = DEFAULT_WHATSAPP_MESSAGE): string => {
+  const encodedMessage = encodeURIComponent(message);
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+};
+
+const WHATSAPP_LINK = buildWhatsAppUrl();
 
 interface Particle {
   id: number;
