@@ -158,7 +158,7 @@ export default function App() {
         <div className="content-card" id="tiltCard" ref={cardRef}>
           <div className="avatar-wrapper">
             <img
-              src="/img.jpeg"
+              src="/assets/aistudio/WhatsApp_Image_2026-11-17_at_12.35.48_PM_8e4e9196.jpeg"
               alt="South Anna Logo"
               className="profile-avatar"
               onError={(e) => {
