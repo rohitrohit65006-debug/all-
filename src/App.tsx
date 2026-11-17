@@ -121,14 +121,14 @@ export default function App() {
       <header>
         <a href="#" className="logo">
           <img
-            src="/img.jpeg"
-            alt="realreddy Logo"
+            src="/assets/aistudio/WhatsApp_Image_2026-11-17_at_12.35.48_PM_8e4e9196.jpeg"
+            alt="South Anna Logo"
             onError={(e) => {
               (e.currentTarget as HTMLImageElement).src =
-                'https://ui-avatars.com/api/?name=realreddy&background=25D366&color=fff&size=200';
+                'https://ui-avatars.com/api/?name=South+Anna&background=25D366&color=fff&size=200';
             }}
           />
-          <span className="logo-text">allbook</span>
+          <span className="logo-text">South Anna</span>
         </a>
         <nav>
           <a href="#">
@@ -159,18 +159,18 @@ export default function App() {
           <div className="avatar-wrapper">
             <img
               src="/img.jpeg"
-              alt="realreddy Logo"
+              alt="South Anna Logo"
               className="profile-avatar"
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).src =
-                  'https://ui-avatars.com/api/?name=realreddy&background=25D366&color=fff&size=200';
+                  'https://ui-avatars.com/api/?name=South+Anna&background=25D366&color=fff&size=200';
               }}
             />
             <div className="online-dot"></div>
           </div>
 
           <div className="contact-name-wrapper">
-            <h1 className="contact-name">All Book</h1>
+            <h1 className="contact-name">South Anna</h1>
             {/* Verified Blue Tick SVG */}
             <svg
               aria-label="Verified"
@@ -331,7 +331,7 @@ export default function App() {
           </div>
         </div>
         <div className="footer-bottom">
-          <div>2026 © All book LLC</div>
+          <div>2026 © South Anna LLC</div>
           <div>
             <a href="#">Terms & Privacy Policy</a>
             <a href="#">Sitemap</a>
